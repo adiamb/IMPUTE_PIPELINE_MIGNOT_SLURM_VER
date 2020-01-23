@@ -9,7 +9,6 @@ cat > PLINK_SPLIT.sh <<- EOF
 #SBATCH --time=01:00:00
 #SBATCH --array=1-22
 #SBATCH --account=mignot
-module load plink/1.90
 $command
 EOF
 #sbatch --export=ALL PLINK_SPLIT.sh
