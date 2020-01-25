@@ -1,5 +1,5 @@
 #!/bin/bash 
-command="plink --bfile "$1" --chr \$SLURM_ARRAY_TASK_ID --make-bed --out "$1"_CHR\$SLURM_ARRAY_TASK_ID"
+command="./plink --bfile "$1" --chr \$SLURM_ARRAY_TASK_ID --make-bed --out "$1"_CHR\$SLURM_ARRAY_TASK_ID"
 touch PLINK_SPLIT.sh
 chmod 755 PLINK_SPLIT.sh
 cat > PLINK_SPLIT.sh <<- EOF
