@@ -29,3 +29,4 @@ cat > shapeit_array.sh <<- EOF
 $command
 EOF
 fi
+sbatch shapeit_array.sh
