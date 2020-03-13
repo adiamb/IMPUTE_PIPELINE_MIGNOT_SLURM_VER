@@ -8,6 +8,7 @@ cat > CAT_IMPUTE.sh <<- EOF
 #SBATCH --array=1-22
 #SBATCH --account=mignot
 #SBATCH --time=120:00:00
+module load legacy/scg4
 module load python/2.7
 python CONCAT_IMPUTE.py -F CHR\${SLURM_ARRAY_TASK_ID}_$1
 EOF
