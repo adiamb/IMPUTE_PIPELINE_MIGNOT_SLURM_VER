@@ -37,14 +37,6 @@ class impute_clean(object):
 
 	def get_attr(self):
 		print(' NAME :- {} \n SOURCE FILE PREFIX:- {} \n INSTANCE COUNT :- {}'.format(self.name, self.file_prefix,  self.instance_count))
-
-	@staticmethod
-	def is_int(input):
-		try:
-			num = int(input)
-		except ValueError:
-			return False
-	  	return True
 	
 	def parse_dir(self):
 		file_ = self.file_prefix
@@ -56,7 +48,7 @@ class impute_clean(object):
 				assert file_ in filename
 				basename, ext = os.path.splitext(filename)
 				#print(basename, ext)
-				if self.is_int(ext.replace('.','')):
+				if ext.replace('.','').isdigit():
 					make_key = 'impute'
 					#print 'yeay'
 				else:
